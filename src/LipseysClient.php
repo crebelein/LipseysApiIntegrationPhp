@@ -34,8 +34,9 @@ class LipseysClient
 
     private function RequestBuilder($options){
         $curl = curl_init();
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($curl, CURLOPT_SSLVERSION, 6);
         curl_setopt_array($curl, $options);
         return $curl;
     }
